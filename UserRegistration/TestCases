@@ -1,0 +1,74 @@
+
+API's
+
+1>Add User (POST)
+
+api->  localhost:8080/user/addUser
+
+   {
+    "firstName":"Rohit",
+    "lastName":"Kumar",
+    "address":"Mumbai",
+    "pinCode":"444102",
+    "dob":"1996-04-09",
+    "doj":"2021-09-27"
+}
+
+
+2> Get All Users (GET)
+
+api->localhost:8080/user/getAllUsers
+
+
+3>Update User (PUT)
+
+api-> localhost:8080/user/updateUser/1 
+
+    {
+    "firstName":"Rakesh",
+    "lastName":"Singh",
+    "address":"Mumbai",
+    "pinCode":"444102",
+    "dob":"1996-04-09",
+    "doj":"2021-09-27"
+    }
+    
+    
+4>Get User By Id (GET)
+
+api-> localhost:8080/user/getUserById/4
+
+
+5>Get User By FirstName (GET)
+
+api->localhost:8080/user/getByFirstName/Abhi
+
+
+6>Get User By LastName (GET)
+
+api->localhost:8080/user/getByLastName/Ugale
+
+7>Get User By PinCode (GET)
+
+api->localhost:8080/user/getByPinCode/444100
+
+
+
+8>Sort User By Dob (GET)
+
+api->localhost:8080/user/sortByDob
+
+
+9>Sort User By Doj (GET)
+
+api->localhost:8080/user/sortByDoj
+
+10>Delete User By Id (DELETE)
+
+api->localhost:8080/deleteUser/2
+
+11>Change Flag as deleted=1 (DELETED)
+
+api->localhost:8080/user/deleteUserFlag/2
+
+
