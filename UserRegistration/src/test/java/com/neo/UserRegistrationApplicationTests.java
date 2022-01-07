@@ -78,6 +78,9 @@ class UserRegistrationApplicationTests {
 		Assert.notNull(userRepository.findByUserId(2));
 	}
 	
-	
+	@Test
+	void getAllActiveUsers() {
+		Assert.notNull(userRepository.getAllActiveUsers());
+	}
 
 }
