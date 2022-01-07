@@ -30,6 +30,8 @@ public interface UserService {
 
 	public List<User> getAllActiveUsers();
 
+	public List<User> findByFirstLastNamePinCode(String firstName, String lastName, String pinCode);
+
 
 
 	

@@ -25,6 +25,8 @@ public interface UserRepository extends JpaRepository<User,Integer>{
 
 	@Query("from User u where u.deleted=0")
 	List<User> getAllActiveUsers();
+    
+	List<User> findByFirstNameOrLastNameOrPinCode(String firstName, String lastName, String pinCode);
 
 
 

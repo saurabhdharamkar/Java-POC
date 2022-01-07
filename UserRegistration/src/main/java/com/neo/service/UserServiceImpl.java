@@ -78,6 +78,11 @@ public class UserServiceImpl implements UserService{
 		return userRepository.getAllActiveUsers();
 	}
 
+	@Override
+	public List<User> findByFirstLastNamePinCode(String firstName, String lastName, String pinCode) {
+		return userRepository.findByFirstNameOrLastNameOrPinCode(firstName,lastName,pinCode);
+	}
+
 	
 
 	

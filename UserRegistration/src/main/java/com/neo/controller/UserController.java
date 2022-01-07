@@ -110,5 +110,11 @@ public class UserController {
 	}
 	
 	
+	@GetMapping("/get/{firstName}/{lastName}/{pinCode}")
+	public List<User> getUserByFirstNameLastNamePinCode(@PathVariable("firstName")String  firstName,@PathVariable("lastName")String lastName,@PathVariable("pinCode")String pinCode){
+		return userService.findByFirstLastNamePinCode(firstName,lastName,pinCode);
+	}
+	
+	
 
 }
