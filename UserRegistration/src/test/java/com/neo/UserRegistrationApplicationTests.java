@@ -16,7 +16,7 @@ class UserRegistrationApplicationTests {
 	@Autowired
 	private UserRepository userRepository;
 	
-	//User user=new  User();
+	
 
 	@Test
 	void findUserById() {

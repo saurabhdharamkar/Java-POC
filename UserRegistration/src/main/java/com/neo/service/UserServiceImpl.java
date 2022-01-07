@@ -73,6 +73,13 @@ public class UserServiceImpl implements UserService{
 		return userRepository.findByOrderByDobAsc();
 	}
 
+	@Override
+	public List<User> getAllActiveUsers() {
+		return userRepository.getAllActiveUsers();
+	}
+
+	
+
 	
 
 	

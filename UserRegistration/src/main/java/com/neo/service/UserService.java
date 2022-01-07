@@ -28,6 +28,10 @@ public interface UserService {
 
 	public List<User> findByOrderByDobAsc();
 
+	public List<User> getAllActiveUsers();
+
+
+
 	
 	
 	

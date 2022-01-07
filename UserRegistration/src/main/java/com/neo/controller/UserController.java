@@ -95,16 +95,20 @@ public class UserController {
 	
 	@GetMapping("/sortByDoj")	
 	public List<User> findByOrderByDojAsc(){
-		List<User>users=null;
-		return users=userService.findByOrderByDojAsc();
+		return userService.findByOrderByDojAsc();
 	 }
 	
 	@GetMapping("/sortByDob")	
 	public List<User> findByOrderByDobAsc(){
-		List<User>users=null;
-		return users=userService.findByOrderByDobAsc();
+		
+		return userService.findByOrderByDobAsc();
 	 }
 
+	@GetMapping("/getActiveUsers")//it shows record whose deleted=0
+	public List<User> getAllActiveUser(){
+		return userService.getAllActiveUsers();
+	}
+	
 	
 
 }
