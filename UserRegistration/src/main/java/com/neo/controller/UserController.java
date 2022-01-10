@@ -49,7 +49,7 @@ public class UserController {
 		Optional<User> check=userService.getUserById(userId);
 		if(check.isPresent()) {
 		user.setUserId(userId);
-		return userService.addUser(user);
+		 userService.addUser(user);
 		}
 		return user;
 	}
