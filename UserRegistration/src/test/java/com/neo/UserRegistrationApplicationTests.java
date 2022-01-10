@@ -38,18 +38,18 @@ class UserRegistrationApplicationTests {
 	@Test
 	void updateUser() {
 		Date date = new Date();
-		User user = new User(1,"Saurabh","Dharamkar","Akola","1234",date,date,0);
+		User user = new User(32,"Saurabh","Dharamkar","Akola","1234",date,date,0);
 		Assert.notNull(userRepository.save(user));
 	}
 	
 	@Test
 	void findByFirstName() {
-		Assert.notNull(userRepository.findByFirstName("Abhi"));
+		Assert.notNull(userRepository.findByFirstName("Karan"));
 	}
 	
 	@Test
 	void findByLastName() {
-		Assert.notNull(userRepository.findByLastName("Ugale"));
+		Assert.notNull(userRepository.findByLastName("Singh"));
 	}
 	
 	@Test
