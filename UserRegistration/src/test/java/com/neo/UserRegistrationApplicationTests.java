@@ -82,5 +82,10 @@ class UserRegistrationApplicationTests {
 	void getAllActiveUsers() {
 		Assert.notNull(userRepository.getAllActiveUsers());
 	}
+	
+	@Test
+	void getByFNameLNameOrPinCode() {
+		Assert.notNull(userRepository.findByFirstNameOrLastNameOrPinCode("Samadhan","Ugale","444108"));
+	}
 
 }
