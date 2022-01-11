@@ -16,11 +16,11 @@ public interface UserService {
 	
 	public void deleteUserById(int userId);
 
-	public User getByFirstName(String firstName);
+	public List<User> getByFirstName(String firstName);
 
-	public User getByLastName(String lastName);
+	public List<User> getByLastName(String lastName);
 
-	public User getByPinCode(String pinCode);
+	public List<User> getByPinCode(String pinCode);
 
 	public User getUserByFlagId(int userId);
 
@@ -31,6 +31,8 @@ public interface UserService {
 	public List<User> getAllActiveUsers();
 
 	public List<User> findByFirstLastNamePinCode(String firstName, String lastName, String pinCode);
+
+	
 
 
 

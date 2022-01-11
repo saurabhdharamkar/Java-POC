@@ -72,7 +72,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/getByFirstName/{firstName}")
-	public User getByFirstName(@PathVariable("firstName") String firstName) {
+	public List<User> getByFirstName(@PathVariable("firstName") String firstName) {
 		
 		return userService.getByFirstName(firstName);
 		
@@ -80,14 +80,14 @@ public class UserController {
 
 
 	@GetMapping("/getByLastName/{lastName}")
-	public User getByLastName(@PathVariable("lastName") String lastName) {
+	public List<User> getByLastName(@PathVariable("lastName") String lastName) {
 		
 		return userService.getByLastName(lastName);
 		
 	}
 	
 	@GetMapping("/getByPinCode/{pinCode}")
-	public User getByPinCode(@PathVariable("pinCode") String pinCode) {
+	public List<User> getByPinCode(@PathVariable("pinCode") String pinCode) {
 		
 		return userService.getByPinCode(pinCode);
 		

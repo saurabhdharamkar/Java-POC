@@ -43,18 +43,18 @@ public class UserServiceImpl implements UserService{
 	
 
 	@Override
-	public User getByFirstName(String firstName) {
+	public List<User> getByFirstName(String firstName) {
 		return userRepository.findByFirstName(firstName);
 	}
 
 	@Override
-	public User getByLastName(String lastName) {
+	public List<User> getByLastName(String lastName) {
 		
 		return userRepository.findByLastName(lastName);
 	}
 
 	@Override
-	public User getByPinCode(String pinCode) {
+	public List<User> getByPinCode(String pinCode) {
 		return userRepository.findByPinCode(pinCode);
 	}
 
@@ -83,6 +83,7 @@ public class UserServiceImpl implements UserService{
 		return userRepository.findByFirstNameOrLastNameOrPinCode(firstName,lastName,pinCode);
 	}
 
+	
 	
 
 	
