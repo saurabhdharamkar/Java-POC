@@ -38,7 +38,7 @@ class UserRegistrationApplicationTests {
 	@Test
 	void updateUser() {
 		Date date = new Date();
-		User user = new User(32,"Saurabh","Dharamkar","Akola","1234",date,date,0);
+		User user = new User(39,"Saurabh","Dharamkar","Akola","1234",date,date,0);
 		Assert.notNull(userRepository.save(user));
 	}
 	
