@@ -15,4 +15,6 @@ public interface ProjectService {
 	
 	public void deleteProjectById(int projectId);
 
+	public List<Project> findProjectByStudentId(int studentId);
+
 }

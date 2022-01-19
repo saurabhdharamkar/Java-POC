@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.neosoft.Model.Project;
+import com.neosoft.Model.Student;
 import com.neosoft.Service.ProjectService;
+import com.neosoft.Service.StudentService;
 
 @RestController
 //@RequestMapping("/project")
@@ -22,6 +23,9 @@ public class ProjectController {
 	
 	@Autowired
 	private ProjectService projectService;
+	
+	@Autowired
+	private StudentService studentService;
 	
 	@PostMapping("/addProject")
 	public Project addProject(@RequestBody Project project) {
@@ -54,6 +58,12 @@ public class ProjectController {
 		return projectService.findProjectById(projectId);
 	}
 	
+	@GetMapping("/getProjectByStudentId/{studentId}")
+	public List<Project> getProjectByStudentId(@PathVariable("studentId")int studentId){
+		
+		return projectService.findProjectByStudentId(studentId);
+	}
+	
 	
 	@DeleteMapping("/deleteProjectById/{projectId}")
 	public void deleteProject(@PathVariable("projectId")int projectId) {
@@ -61,4 +71,16 @@ public class ProjectController {
 		projectService.deleteProjectById(projectId);
 		
 	}
+	
+	@PostMapping("/assignProjectToStudent/{studentId}")
+	public Project assignProject(@PathVariable int studentId,@RequestBody Project project) {
+		Student st=studentService.getStudentById1(studentId);
+		project.setStudent(st);
+		return projectService.addProject(project);
+		
+	}
+	
+	
+	
+	
 }

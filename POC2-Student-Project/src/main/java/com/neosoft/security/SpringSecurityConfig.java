@@ -32,6 +32,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET,"/getAllProjects").hasAnyRole("ADMIN")
 		.antMatchers(HttpMethod.DELETE,"/getStudentById/**").hasAnyRole("ADMIN")
 		.antMatchers(HttpMethod.DELETE,"/getProjectById/**").hasAnyRole("ADMIN")
+		.antMatchers(HttpMethod.GET,"/getProjectByStudentId/**").hasAnyRole("ADMIN")
 		.antMatchers(HttpMethod.POST,"/addStudent").hasAnyRole("STUDENT")
 		.antMatchers(HttpMethod.POST,"/addProject").hasAnyRole("ADMIN")//Any method called related to post
 		.antMatchers(HttpMethod.PUT,"/updateStudent/**").hasAnyRole("ADMIN")

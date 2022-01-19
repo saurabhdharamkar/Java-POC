@@ -33,17 +33,18 @@ public class StudentServiceImpl implements StudentService{
 		return studentRepository.findById(studentId);
 	}
 
-	@Override
-	public List<Student> getStudentByProjectId(int projectId) {
-		
-		return studentRepository.findStudentByProjectId(projectId);
-	}
+	
 
 	@Override
 	public void deleteStudentById(int studentId) {
 	
 		studentRepository.deleteById(studentId);
 		
+	}
+
+	@Override
+	public Student getStudentById1(int studentId) {
+		return studentRepository.findById1(studentId);
 	}
 
 }

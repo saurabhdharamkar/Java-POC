@@ -40,4 +40,10 @@ public class ProjectServiceImpl implements ProjectService{
 		
 	}
 
+	@Override
+	public List<Project> findProjectByStudentId(int studentId) {
+		
+		return projectRepository.findProjectByStudentId(studentId);
+	}
+
 }

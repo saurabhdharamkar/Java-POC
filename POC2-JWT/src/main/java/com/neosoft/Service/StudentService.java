@@ -13,8 +13,10 @@ public interface StudentService {
 	
 	public Optional<Student> getStudentById(int studentId);
 	
-	public List<Student> getStudentByProjectId(int projectId);
+	//public List<Student> getStudentByProjectId(int projectId);
 	
 	public void deleteStudentById(int studentId);
+
+	public Student getStudentById1(int studentId);
 
 }

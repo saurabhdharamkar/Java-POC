@@ -10,7 +10,11 @@ import com.neosoft.Model.Student;
 
 public interface StudentRepository extends JpaRepository<Student,Integer> {
 
-	@Query("from Student s where s.project.projectId=?1")
-	List<Student> findStudentByProjectId(int projectId);
+	
+	@Query("from Student s where s.studentId=?1")
+	Student findById1(int studentId);
+//
+//	@Query("from Student s where s.project.projectId=?1")
+//	List<Student> findStudentByProjectId(int projectId);
 
 }

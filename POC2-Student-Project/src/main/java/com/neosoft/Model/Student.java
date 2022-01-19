@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-
+@AllArgsConstructor
 @NoArgsConstructor
 @Table(name="student")
 public class Student {
@@ -55,20 +55,9 @@ public class Student {
 	@Column(name="email_address")
 	private String emailAddress;
 	
-	@ManyToOne
-	@JoinColumn(name="project_id")
-	private Project project;
+	
 
-	public Student(int studentId, @NotNull @Size(max = 55) String firstName, @NotNull @Size(max = 55) String lastName,
-			@NotNull @Size(max = 12) String mobileNo, @NotNull @Size(max = 55) String emailAddress, Project project) {
-		super();
-		this.studentId = studentId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.mobileNo = mobileNo;
-		this.emailAddress = emailAddress;
-		this.project = project;
-	}
+
 	
 	
 	

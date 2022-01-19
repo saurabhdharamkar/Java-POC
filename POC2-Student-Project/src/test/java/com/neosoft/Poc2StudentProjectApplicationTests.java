@@ -28,13 +28,15 @@ class Poc2StudentProjectApplicationTests {
 	
 	@Test
 	void addProject() {
-	Project project=new Project(10,"Bank","6 month");
+		Student st=new Student(1,"Saurabh","Dharamkar","8987898789","sd@gmail.com");
+	Project project=new Project(10,"Bank","6 month",st);
 	Assert.notNull(projectRepository.save(project));
 	}
 	
 	@Test
 	void  updateProject() {
-	Project project=new Project(10,"Bank","6 month");
+     Student st=new Student(1,"Saurabh","Dharamkar","8987898789","sd@gmail.com");
+	Project project=new Project(10,"Bank","6 month",st);
 	Assert.notNull(projectRepository.save(project));
 	}
 	
@@ -46,15 +48,15 @@ class Poc2StudentProjectApplicationTests {
 	
 	@Test
 	void addStudent() {
-		Project project =new Project(3,"MIS App ","6 months ");
-	Student student=new Student(40,"Rohit","Kumar","9878987898","rohit@gmail.com",project);
+		
+	Student student=new Student(40,"Rohit","Kumar","9878987898","rohit@gmail.com");
 	Assert.notNull(studentRepository.save(student));
 	}
 	
 	@Test
 	void updateStudent() {
-		Project project =new Project(3,"MIS App ","5 months ");
-	Student student=new Student(20,"Rohit","Kumar","9878987898","rohit@gmail.com",project);
+		
+	Student student=new Student(20,"Rohit","Kumar","9878987898","rohit@gmail.com");
 	Assert.notNull(studentRepository.save(student));
 	}
 	
@@ -64,8 +66,8 @@ class Poc2StudentProjectApplicationTests {
 	}
 	
 	@Test
-	void findStudentByProjectId() {
-		Assert.notNull(studentRepository.findStudentByProjectId(4));
+	void findProjectByStudentId() {
+		Assert.notNull(projectRepository.findProjectByStudentId(4));
 	}
 	
 	

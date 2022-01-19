@@ -55,10 +55,6 @@ public class StudentController {
 	}
 	
 	
-	@GetMapping("/getStudentByProjectId/{projectId}")
-	public List<Student> getStudentByProjectId(@PathVariable("projectId")int projectId) {
-		return studentService.getStudentByProjectId(projectId);
-	}
 	
 	
 	@DeleteMapping("/deleteStudentById/{studentId}")

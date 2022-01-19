@@ -55,8 +55,5 @@ public class Student {
 	@Column(name="email_address")
 	private String emailAddress;
 	
-	@ManyToOne
-	@JoinColumn(name="project_id")
-	private Project project;
 
 }
