@@ -18,10 +18,8 @@ import com.neo.model.User;
 import com.neo.service.UserService;
 
 @RestController
-
-@CrossOrigin(origins="http://localhost:4200")  
+@CrossOrigin
 @RequestMapping("/user")
-
 public class UserController {
 	
 	@Autowired
@@ -78,7 +76,7 @@ public class UserController {
 	@GetMapping("/getByFirstName/{firstName}")
 	public List<User> getByFirstName(@PathVariable("firstName") String firstName) {
 		
-		return userService.getByFirstName(firstName);
+		return userService.getByFirstNameLike(firstName);
 		
 	}
 
@@ -104,6 +102,12 @@ public class UserController {
 	
 	@GetMapping("/sortByDob")	
 	public List<User> findByOrderByDobAsc(){
+		
+		return userService.findByOrderByDobAsc();
+	 }
+	
+	@GetMapping("/sortByFirstName")	
+	public List<User> findByOrderByFirstNameAsc(){
 		
 		return userService.findByOrderByDobAsc();
 	 }
