@@ -6,12 +6,6 @@ create table AUTHOR (AUTHOR_ID INT auto_increment primary key, AUTHOR_NAME VARCH
 insert into author (author_name) values ("JAMES BOND");
 select*from author;
 
-/*  create table post(
-id int primary key,
-name varchar2(100),
-authorid int foreign key references id of table author
-createdts datetime
-)*/
 
 CREATE TABLE POST  (POST_ID INT primary key auto_increment, 
                    POST_NAME varchar(300) not null,
@@ -29,12 +23,7 @@ INSERT INTO POST (POST_ID, POST_NAME, AUTHOR_ID, CREATED_AT) VALUES (
                                                                      
 
 /* create table comment (
-id int primary key,
-content varchar2(1000),
-postid int foreign key references id of table post
-createdts datetime
-userid int foreign key references id of table user
-)*/
+*/
 
 CREATE TABLE COMMENT (COMMENT_ID INT PRIMARY KEY auto_increment,
                       CONTENT varchar(10000),
@@ -47,20 +36,21 @@ SELECT * FROM COMMENT;
 
 INSERT INTO COMMENT (COMMENT_ID, CONTENT, POST_ID, CREATED_AT,USER_ID) VALUES (
 																	1, "MY 1ST COMMENT",1,current_timestamp(),1),
-                                                                     (2, "MY 2ND COMMENT",2,current_timestamp(),2),
-                                                                     (3, "MY 3RD COMMENT",1,current_timestamp(),3),
+                                                                     (2, "MY 6th COMMENT",2,current_timestamp(),2),
+                                                                     (3, "MY 5th COMMENT",1,current_timestamp(),3),
                                                                      (4, "MY 4TH COMMENT",2,current_timestamp(),1),
-                                                                     (5, "MY 1ST COMMENT",1,current_timestamp(),2),
+                                                                     (5, "MY 8th COMMENT",1,current_timestamp(),2),
                                                                      (6, "MY 2ND COMMENT",2,current_timestamp(),2),
-                                                                     (7, "MY 3RD COMMENT",3,current_timestamp(),3);
+                                                                     (7, "MY 3RD COMMENT",3,current_timestamp(),3),
+                                                                      (8, "MY 7th COMMENT",3,current_timestamp(),3),
+																	 (9, "MY 9th COMMENT",3,current_timestamp(),3),
+                                                                      (10, "MY 10th COMMENT",3,current_timestamp(),3),
+                                                                       (11, "MY 11th COMMENT",3,current_timestamp(),3);
                                                                      
 
 
               
-/* create table user (
-id int primary key,
-name varchar2(100)
-)*/
+/* create table user */
 					
 CREATE TABLE USER (USER_ID INT PRIMARY KEY,
 				 USER_NAME VARCHAR(100));
