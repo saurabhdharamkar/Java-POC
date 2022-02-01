@@ -4,6 +4,7 @@ use poc4;
 
 create table AUTHOR (AUTHOR_ID INT auto_increment primary key, AUTHOR_NAME VARCHAR(100) not null);
 insert into author (author_name) values ("JAMES BOND");
+
 select*from author;
 
 
@@ -17,9 +18,9 @@ select*from post;
 INSERT INTO POST (POST_ID, POST_NAME, AUTHOR_ID, CREATED_AT) VALUES (
                                                                      1, "MY FIFTH POST",1,current_timestamp()),
                                                                      (2, "MY SIXTH POST",1,current_timestamp()),
-                                                                     (3, "MY SEVENTH POST",2,current_timestamp()),
-                                                                     (4, "MY EIGTH POST",3,current_timestamp()),
-                                                                     (5, "MY NINTH POST",3,current_timestamp());
+                                                                     (3, "MY SEVENTH POST",1,current_timestamp()),
+                                                                     (4, "MY EIGTH POST",1,current_timestamp()),
+                                                                     (5, "MY NINTH POST",1,current_timestamp());
                                                                      
 
 /* create table comment (
@@ -36,16 +37,16 @@ SELECT * FROM COMMENT;
 
 INSERT INTO COMMENT (COMMENT_ID, CONTENT, POST_ID, CREATED_AT,USER_ID) VALUES (
 																	1, "MY 1ST COMMENT",1,current_timestamp(),1),
-                                                                     (2, "MY 6th COMMENT",2,current_timestamp(),2),
-                                                                     (3, "MY 5th COMMENT",1,current_timestamp(),3),
+                                                                     (2, "MY 6th COMMENT",2,current_timestamp(),1),
+                                                                     (3, "MY 5th COMMENT",1,current_timestamp(),1),
                                                                      (4, "MY 4TH COMMENT",2,current_timestamp(),1),
-                                                                     (5, "MY 8th COMMENT",1,current_timestamp(),2),
-                                                                     (6, "MY 2ND COMMENT",2,current_timestamp(),2),
-                                                                     (7, "MY 3RD COMMENT",3,current_timestamp(),3),
-                                                                      (8, "MY 7th COMMENT",3,current_timestamp(),3),
-																	 (9, "MY 9th COMMENT",3,current_timestamp(),3),
-                                                                      (10, "MY 10th COMMENT",3,current_timestamp(),3),
-                                                                       (11, "MY 11th COMMENT",3,current_timestamp(),3);
+                                                                     (5, "MY 8th COMMENT",1,current_timestamp(),1),
+                                                                     (6, "MY 2ND COMMENT",2,current_timestamp(),1),
+                                                                     (7, "MY 3RD COMMENT",3,current_timestamp(),1),
+                                                                      (8, "MY 7th COMMENT",3,current_timestamp(),1),
+																	 (9, "MY 9th COMMENT",3,current_timestamp(),1),
+                                                                      (10, "MY 10th COMMENT",3,current_timestamp(),1),
+                                                                       (11, "MY 11th COMMENT",3,current_timestamp(),1);
                                                                      
 
 
@@ -56,6 +57,7 @@ CREATE TABLE USER (USER_ID INT PRIMARY KEY,
 				 USER_NAME VARCHAR(100));
                  
 insert into user(user_id,user_name) values (1,"Saurabh");
+
                  
 SELECT*FROM USER;
                       
