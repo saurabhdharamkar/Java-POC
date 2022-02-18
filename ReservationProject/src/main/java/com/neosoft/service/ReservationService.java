@@ -23,7 +23,9 @@ public class ReservationService {
 		this.reservationRepository = reservationRepository;
 	}
 
-
+	public Iterable<Reservation> performSearch(String keyword){
+		return reservationRepository.performSearch(keyword);
+	}
 	public Iterable<Reservation> reservationList() {
 		
 		return reservationRepository.findAll();
@@ -48,11 +50,9 @@ public class ReservationService {
 	}
 
 
-	public List<Reservation> findByFirstNameOrLastNameOrMobileNoOrEmailId(String firstName, String lastName, String mobileNo,
-			String emailId) {
+	public List<Reservation> findByFirstName(String firstName) {
 		
-		return reservationRepository.findByFirstNameOrLastNameOrMobileNoOrEmailId( firstName,  lastName,  mobileNo,
-				 emailId);
+		return reservationRepository.findByFirstNameLike( firstName);
 	}
 
 

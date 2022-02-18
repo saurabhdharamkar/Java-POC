@@ -87,11 +87,10 @@ public class ReservationController {
 	    }
 
 	@PutMapping("/edit-add-reservation/{id}")
-	public String updateReservation(@Valid @ModelAttribute("reservation") Reservation reservation,@PathVariable("id")Long id) 
-			throws ResourceNotFoundException{
+	public String updateReservation(@Valid @ModelAttribute("reservation") Reservation reservation,@PathVariable("id")Long id) throws ResourceNotFoundException {
 		log.info("Put:/edit-add-reservation/{"+reservation.getId()+"}---->Called");
 		Reservation reservation1=reservationService.findById(id)
-				.orElseThrow(()->new ResourceNotFoundException("Reservation Not Found for Id"+id));
+		.orElseThrow(()->new ResourceNotFoundException("Employee Not Found for Id"+id));
 		reservation.setId(id);
 		reservationService.addReservation(reservation);
 		return "redirct:add-edit";
@@ -101,18 +100,17 @@ public class ReservationController {
 	public String deleteReservation(@PathVariable("id")Long id,Model model) throws ResourceNotFoundException {
 		log.info("GetMapping:/delete-reservation{"+id+"}--->called");
 		Reservation reservation1=reservationService.findById(id)
-				.orElseThrow(()->new ResourceNotFoundException("Reservation Not Found for Id"+id));
+				.orElseThrow(()->new ResourceNotFoundException("Employee Not Found for Id"+id));
 		reservationService.deleteReservation(id);
 		model.addAttribute("reservations",reservationService.reservationList());
 		return "reservations";
 		
 	}
 	
-	@GetMapping("/search/{firstName}")
+	@GetMapping("/search")
+	public String findByFirstName( String firstName,Model model) {
 		
-		public String findByFirstOrLastOrMobileOrEmail(@PathVariable("firstName") String firstName,@PathVariable("lastName")String lastName,@PathVariable("mobileNo")String mobileNo,@PathVariable("emailId")String emailId,Model model) {
-		System.out.println("hello");
-		model.addAttribute("reservations",reservationService.findByFirstNameOrLastNameOrMobileNoOrEmailId(firstName,lastName,mobileNo,emailId));
+		model.addAttribute("reservations",reservationService.findByFirstName(firstName));
 	     return "reservations";
 	}
 	

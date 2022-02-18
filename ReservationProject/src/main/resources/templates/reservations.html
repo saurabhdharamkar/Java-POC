@@ -4,14 +4,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
 <body>
+
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="">
             <h1> Reservations </h1>
-          <form th:action="@{/search}" method="GET">
-           <input type="text" name="firstName" placeholder="Search By Name" class="form-control md-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <input type="submit" value="Search" id="search" class="btn btn-primary"> 
-           </form>
+            <form th:action="@{/search}" method="get">
+  <input type="text" name="firstName" th:value="${firstName}"  placeholder="Find by FirstName" size="50" >
+  <button type="submit" class="btn btn-info" >Search</button>
+  <button type="submit" class="btn btn-info" >Reset</button>
+  </form>
             
         </div>
     </div>
@@ -20,8 +22,8 @@
     </a>
     <div class="row">
    
-        <div class="col-md-6">
-            <table class="table">
+        <div class="p-4">
+            <table class="table table-light table-striped">
                 <thead>
                 <tr>
                     <!--

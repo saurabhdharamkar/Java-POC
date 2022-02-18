@@ -57,7 +57,11 @@ public class Reservation {
     private String state;
     
     private String date;
-   
+    
+    public Reservation() {
+		
+	}
+    
     
 
 	public Reservation(Long id, @NotBlank(message = "Please provide a Firt Name.") String firstName,
@@ -65,9 +69,8 @@ public class Reservation {
 			@Size(max = 10) @NotBlank(message = "Please provide a Mobile No.") String mobileNo,
 			@NotBlank(message = "Please provide a Email Id.") String emailId,
 			@Size(max = 100) @NotBlank(message = "Please provide a City.") String city,
-			@Size(max = 100) @NotBlank(message = "Please provide a State.") String state,
-			@Size(max = 100) @NotBlank(message = "Please provide a State.") String date) {
-		    
+			@Size(max = 100) @NotBlank(message = "Please provide a State.") String state, String date) {
+		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -76,12 +79,6 @@ public class Reservation {
 		this.city = city;
 		this.state = state;
 		this.date = date;
-	}
-
-
-
-	public Reservation() {
-		// TODO Auto-generated constructor stub
 	}
 
 
